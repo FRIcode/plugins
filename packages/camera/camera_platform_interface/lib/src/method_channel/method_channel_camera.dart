@@ -71,6 +71,7 @@ class MethodChannelCamera extends CameraPlatform {
           name: camera['name'],
           lensDirection: parseCameraLensDirection(camera['lensFacing']),
           sensorOrientation: camera['sensorOrientation'],
+          hasFlash: camera['hasFlash'],
         );
       }).toList();
     } on PlatformException catch (e) {

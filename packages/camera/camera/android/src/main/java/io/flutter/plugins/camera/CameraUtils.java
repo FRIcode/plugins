@@ -110,6 +110,7 @@ public final class CameraUtils {
       details.put("name", cameraName);
       int sensorOrientation = characteristics.get(CameraCharacteristics.SENSOR_ORIENTATION);
       details.put("sensorOrientation", sensorOrientation);
+      details.put("hasFlash", characteristics.get(CameraCharacteristics.FLASH_INFO_AVAILABLE));
 
       int lensFacing = characteristics.get(CameraCharacteristics.LENS_FACING);
       switch (lensFacing) {

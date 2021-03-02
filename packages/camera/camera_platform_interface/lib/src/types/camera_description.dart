@@ -21,6 +21,7 @@ class CameraDescription {
     required this.name,
     required this.lensDirection,
     required this.sensorOrientation,
+    this.hasFlash = false,
   });
 
   /// The name of the camera device.
@@ -28,6 +29,9 @@ class CameraDescription {
 
   /// The direction the camera is facing.
   final CameraLensDirection lensDirection;
+
+  /// Whether the camera has flash.
+  final bool hasFlash;
 
   /// Clockwise angle through which the output image needs to be rotated to be upright on the device screen in its native orientation.
   ///
@@ -44,7 +48,8 @@ class CameraDescription {
       other is CameraDescription &&
           runtimeType == other.runtimeType &&
           name == other.name &&
-          lensDirection == other.lensDirection;
+          lensDirection == other.lensDirection &&
+          hasFlash == other.hasFlash;
 
   @override
   int get hashCode => name.hashCode ^ lensDirection.hashCode;

@@ -8,6 +8,7 @@ package io.flutter.plugins.camera.types;
 public enum FocusMode {
   auto("auto"),
   locked("locked");
+  autoNoLock("autoNoLock"),
 
   private final String strValue;
 

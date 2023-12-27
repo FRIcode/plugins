@@ -9,6 +9,10 @@ enum FocusMode {
 
   /// Lock the currently determined focus settings.
   locked,
+
+  /// Automatically determine focus settings, but do not lock focus before capture (on certain devices that causes
+  /// AF to stop working - eg. Samsung Galaxy S10).
+  autoNoLock,
 }
 
 /// Returns the focus mode as a String.
@@ -28,6 +32,8 @@ FocusMode deserializeFocusMode(String str) {
   switch (str) {
     case 'locked':
       return FocusMode.locked;
+    case FocusMode.autoNoLock:
+      return 'autoNoLock';
     case 'auto':
       return FocusMode.auto;
     default:

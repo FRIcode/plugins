@@ -41,17 +41,12 @@ public final class CameraPlugin implements FlutterPlugin, ActivityAware {
    * Registers a plugin implementation that uses the stable {@code io.flutter.plugin.common}
    * package.
    *
-   * <p>Calling this automatically initializes the plugin. However plugins initialized this way
-   * won't react to changes in activity or context, unlike {@link CameraPlugin}.
+   * <p>This method is deprecated and left empty for compatibility. Use the new embedding instead.
    */
   @SuppressWarnings("deprecation")
-  public static void registerWith(io.flutter.plugin.common.PluginRegistry.Registrar registrar) {
-    CameraPlugin plugin = new CameraPlugin();
-    plugin.maybeStartListening(
-        registrar.activity(),
-        registrar.messenger(),
-        registrar::addRequestPermissionsResultListener,
-        registrar.view());
+  public static void registerWith(Object registrar) {
+    // Empty implementation for v1 embedding compatibility
+    // The plugin will be automatically registered through the new embedding system
   }
 
   @Override
